@@ -39,7 +39,7 @@ ThreatsObject ::~ThreatsObject()
 void ThreatsObject::ResetBullet(BulletObject *p_bullet)
 {
     p_bullet->SetRect(x_pos + 20, y_pos + 10);
-    p_bullet->Set_x_value(15);
+    p_bullet->Set_x_value(11);
 }
 
 bool ThreatsObject ::LoadImg(std ::string path, SDL_Renderer *screen)
@@ -65,7 +65,7 @@ void ThreatsObject::CreateBullet(BulletObject *p_bullet, SDL_Renderer *screen)
         p_bullet->Set_bullet_dir(BulletObject::DIR_LEFT);
         // p_bullet->set_type(BulletObject::SPHERE);
         p_bullet->SetRect(rect.x + 5, rect.y + 37);
-        p_bullet->Set_x_value(15);
+        p_bullet->Set_x_value(11);
         p_bullet_list.push_back(p_bullet);
     }
 }

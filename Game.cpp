@@ -353,7 +353,6 @@ void Game ::Play_Game()
                         }
                     }
                 }
-
                 SDL_Rect Threat_Rect = p_threat->Get_Rect_Frame();
                 bool Bullet_Col2 = Game ::CheckCollision(Player_Rect, Threat_Rect);
                 if (Bullet_Col || Bullet_Col2)

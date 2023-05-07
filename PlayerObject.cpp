@@ -680,6 +680,10 @@ void PlayerObject ::Check_Map(Map &map_data)
             {
                 map_data.Tile[y1 + 3][x1] = 0;
                 map_data.Tile[y1 + 4][x1] = 0;
+                map_data.Tile[y1 + 3][x1 + 1] = 0;
+                map_data.Tile[y1 + 4][x1 + 1] = 0;
+                map_data.Tile[y1 + 3][x1 - 1] = 0;
+                map_data.Tile[y1 + 4][x1 - 1] = 0;
             }
             if (y1 == 1 && x1 == 115)
             {
@@ -696,6 +700,20 @@ void PlayerObject ::Check_Map(Map &map_data)
             else if (y1 == 3 && (x2 == 114 || x2 == 115 || x2 == 116 || x2 == 117))
             {
                 map_data.Tile[y1][x2] = 15;
+            }
+            if (y1 == 5 && x1 == 171)
+            {
+                map_data.Tile[y1][x1] = 15;
+                map_data.Tile[y1 - 2][x1] = 7;
+                map_data.Tile[y1 - 2][x1 - 1] = 7;
+                map_data.Tile[y1 - 2][x1 + 1] = 7;
+            }
+            else if (y1 == 5 && x2 == 171)
+            {
+                map_data.Tile[y1][x2] = 15;
+                map_data.Tile[y1 - 2][x2] = 7;
+                map_data.Tile[y1 - 2][x2 - 1] = 7;
+                map_data.Tile[y1 - 2][x2 + 1] = 7;
             }
         }
     }

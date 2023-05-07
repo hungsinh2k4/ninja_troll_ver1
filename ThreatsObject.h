@@ -120,8 +120,6 @@ private:
     int map_x;
     int map_y;
 
-    bool is_alive;
-
     bool is_stop_bullet;
 
     int Animation_Left = 0;
