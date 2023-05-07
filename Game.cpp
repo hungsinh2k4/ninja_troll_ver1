@@ -157,7 +157,14 @@ std ::vector<ThreatsObject *> MakeBotList(const PlayerObject &player)
             p_threat2->set_clips();
             p_threat2->Set_Input_Left(0);
             p_threat2->Set_x_pos(vectorr.a[i + 20]);
-            p_threat2->Set_y_pos(250);
+            if (i >= 5 && i % 2 == 1)
+            {
+                p_threat2->Set_y_pos(250);
+            }
+            else
+            {
+                p_threat2->Set_y_pos(384);
+            }
 
             p_threat2->Set_Type_Move(ThreatsObject::STATIC_THREAT);
 

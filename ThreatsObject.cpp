@@ -60,11 +60,11 @@ void ThreatsObject::CreateBullet(BulletObject *p_bullet, SDL_Renderer *screen)
         // bool ret = p_bullet->LoadImg("IMG_PNG\\PNG_Main\\Kunai_Left.png", screen);
         // if (ret)
         // {
-        p_bullet->LoadImg("IMG_PNG\\PNG_Main\\Kunai_Left.png", screen);
+        p_bullet->LoadImg("IMG_PNG\\PNG_Main\\Sword.png", screen);
         p_bullet->Set_is_move(true);
         p_bullet->Set_bullet_dir(BulletObject::DIR_LEFT);
         // p_bullet->set_type(BulletObject::SPHERE);
-        p_bullet->SetRect(rect.x + 5, rect.y + 10);
+        p_bullet->SetRect(rect.x + 5, rect.y + 37);
         p_bullet->Set_x_value(15);
         p_bullet_list.push_back(p_bullet);
     }
@@ -95,7 +95,7 @@ void ThreatsObject::MakeBullet(SDL_Renderer *des, const int &x_limit, const int 
                 else
                 {
                     p_bullet->Set_is_move(true);
-                    p_bullet->SetRect(this->rect.x + 5, this->rect.y + 35);
+                    p_bullet->SetRect(this->rect.x + 5, this->rect.y + 37);
                 }
             }
         }
@@ -390,12 +390,19 @@ void ThreatsObject ::ImpMoveType(SDL_Renderer *screen)
 void ThreatsObject ::Check_Die_Bot(SDL_Renderer *des)
 {
     bot_die = true;
-    if (input_type.left == 1)
+    if (Type_Move == MOVE_IN_SPACE_BOT)
     {
-        LoadImg("IMG_PNG\\PNG_Mod1\\golem1_die_left.png", des);
+        if (input_type.left == 1)
+        {
+            LoadImg("IMG_PNG\\PNG_Mod1\\golem1_die_left.png", des);
+        }
+        else if (input_type.left == 0)
+        {
+            LoadImg("IMG_PNG\\PNG_Mod1\\golem1_die_right.png", des);
+        }
     }
-    else if (input_type.left == 0)
+    else
     {
-        LoadImg("IMG_PNG\\PNG_Mod1\\golem1_die_right.png", des);
+        LoadImg("IMG_PNG\\PNG_Mod1\\golem2_die_left.png", des);
     }
 }
